@@ -1,12 +1,12 @@
 pipeline {
     agent any
+	environment {
+		//dockerHome = tool 'myDocker'
+		mavenHome = tool 'myMaven'
+		PATH = "$dockerHome/bin:$mavenHome/bin:$PATH"
+	}
 
-    stages{
-        stage('fetch code') {
-          steps{
-              git branch: 'main', url: "https://github.com/shsadikhussain/check"
-          }  
-        }
+    stages{        
 
         stage('Build') {
             steps {
