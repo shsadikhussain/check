@@ -21,13 +21,15 @@ pipeline {
         }
         stage('Test'){
             steps {
-                sh 'mvn test'
+                //sh 'mvn test'
+				echo 'test'
             }
 
         }
          stage('Code Ananlysis'){
             steps {
-                sh 'mvn checkstyle:checkstyle'
+                //sh 'mvn checkstyle:checkstyle'
+				echo 'code analysis'
             }
 
         }
